@@ -2,7 +2,7 @@
   <div id="app">
     <nav>
       <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <router-link to="/about">Add task</router-link>
     </nav>
     <router-view/>
   </div>
@@ -19,14 +19,18 @@
 
 nav {
   padding: 30px;
+  background-color: #8ecae6;
 
   a {
-    font-weight: bold;
+    font-weight: bolder;
     color: #2c3e50;
+   
+    
 
     &.router-link-exact-active {
-      color: #42b983;
+      color: #219ebc;
     }
   }
 }
 </style>
+
