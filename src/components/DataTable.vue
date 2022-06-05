@@ -20,7 +20,7 @@
                   dark
                   fab
                   x-small
-                  elevation="2"
+                 
                 >
                   <v-icon>edit</v-icon>
                 </v-btn>
@@ -31,7 +31,7 @@
                   fab
                   dark
                   x-small
-                  elevation="2"
+                 
                 >
                   <v-icon>delete_forever</v-icon>
                 </v-btn>
@@ -44,7 +44,7 @@
 <script>
 import "material-design-icons-iconfont/dist/material-design-icons.css";
 export default {
-  name: "HelloWorld",
+  name: "DataTable",
   icons: {
     iconfont: "mdi",
   },
@@ -80,7 +80,7 @@ export default {
 
   methods: {
     edit(item) {
-      console.log("a fost editat" + item)
+      console.log(item)
       this.$router.push({ path: '/edit' })
       
     },

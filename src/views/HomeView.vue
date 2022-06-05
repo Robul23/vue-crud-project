@@ -1,18 +1,18 @@
 <template>
   <div class="home">
-     <h1>This is home page</h1>
-    <HelloWorld/>
+     <h1>Movie tracker web app</h1>
+    <DataTable/>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import DataTable from '@/components/DataTable.vue'
 
 export default {
   name: 'HomeView',
   components: {
-    HelloWorld
+    DataTable
     
 }
 }

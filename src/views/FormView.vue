@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <div class="about">
+    <div class="form">
       <h1>Movie form</h1>
       <v-form class="form">
 
