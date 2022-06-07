@@ -13,6 +13,7 @@ const routes = [
   {
     path: '/form',
     name: 'form',
+    props: true,
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
@@ -21,10 +22,20 @@ const routes = [
   {
     path: '/edit',
     name: 'edit',
+    props: true,
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ '../views/EditView.vue')
+  },
+  {
+    path: '/see',
+    name: 'see',
+    props: true,
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "about" */ '../views/SeeView.vue')
   },
   
 ]

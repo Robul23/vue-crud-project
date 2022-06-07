@@ -2,7 +2,8 @@
   <v-app>
     <div class="form">
       <h1>Movie form</h1>
-      <v-form class="form">
+      <v-form 
+      class="form">
 
         <v-text-field
          v-model="form.title"
@@ -10,9 +11,15 @@
           ></v-text-field>
 
         <v-select
-          v-model="form.type"
+          v-model="form.movieType"
           :items="types"
           label="Type"
+        ></v-select>
+
+         <v-select
+          v-model="form.genre"
+          :items="genres"
+          label="Genre"
         ></v-select>
 
         <v-text-field
@@ -41,6 +48,7 @@
       </v-form>
       <br>
       <p>{{form}}</p>
+      <br>
     </div>
   </v-app>
 </template>
@@ -51,10 +59,12 @@ import axios from "axios";
 
 export default {
   data: () => ({
-    types: ["Movie", "Tv show", 'Cartoon'],
+    types: ["Movie", "Tv show", "Cartoon"],
+    genres:['Action', 'Comedy','Drama','Fantasy','Horror','Mystery','Romance','Thriller'],
     form: {
     title: "",
-    type: null,
+    movieType: null,
+    genre:null,
     year:null,
     description:"",
     watched: false,
@@ -66,15 +76,16 @@ export default {
 
     clear() {
       this.form.title = "";
-      this.form.type = null;
+      this.form.movieType = null;
+      this.form.genre = null;
       this.form.year = null;
       this.form.description = "";
       this.form.watched = false
     },
     submit() {
-        axios.post('https://form-vue-d82a6-default-rtdb.firebaseio.com', this.form)
-        .then((response) => response.data);
-        console.log(this.form)
+        axios.post('https://localhost:44394/api/movies', this.form)
+          .then((response) => response.data,
+          this.$router.push({ path: '/' }));
 
      
     },
